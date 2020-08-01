@@ -1,0 +1,132 @@
+
+.page-choice {
+  width: 100%;
+  padding: 4px;
+  font-size: 1.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.page-choice:hover {
+  background-color: #CFF2F2;
+}
+
+.flex-container {
+  display: flex;
+  align-items: baseline;
+  margin: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.add_button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: #68D391;
+  color: #22543D;
+  border: none;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px -4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.add_button:hover {
+  background-color: #9AE6B4;
+}
+
+.cancel_button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: #F56565;
+  color: #742A2A;
+  border: none;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px -4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cancel_button:hover {
+  background-color: #FEB2B2;
+}
+
+.remove_button {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #F56565;
+  margin-right: 5px; 
+  color: #742A2A;
+  border: none;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: .8rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px -4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.remove_button:hover {
+  background-color: #FEB2B2;
+}
+
+
+.input_label {
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 5px;
+  padding-top: 2px;
+  width: 50%;
+  text-align: right;
+}
+
+.add_fields_container {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  width: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.add_fields_label_and_input {
+  margin: auto;
+  display: flex;
+  white-space: nowrap;
+  width: 300px;
+  padding-bottom: 5px;
+}
+
+.button_container {
+  margin: auto;
+  width: 300px;
+  padding-top: 5px; 
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.box {
+  width: 10px;
+  height: 10px;
+  border:1px solid black;
+  margin-left: 1px;
+  margin-right: 5px;
+}
+
+.match_label {
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 2px;
+  font-size: .8rem;
+  text-align: right;
+}

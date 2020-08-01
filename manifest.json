@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Graylog Highlight Messages",
+    "version": "0.3",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "highlighter.js"
+            ]
+        }
+    ],
+    "options_ui": {
+        "page": "popup/menu.html"
+    },
+    "permissions": [
+        "storage"
+    ],
+}

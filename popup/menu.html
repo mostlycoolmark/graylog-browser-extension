@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="choose_page.css" />
+</head>
+
+<body>
+    <div style="text-align: center; padding-top: 5px; padding-bottom: 5px;">
+        <button id="add_new_matcher" class="add_button">Add new match</button>
+    </div>
+    <div id="new_matcher_input" class="hidden">
+        <div class="add_fields_label_and_input">
+            <label class="input_label">Match Text</label>
+            <input id="new_matcher_text" style='width: 50%'></input>
+        </div>
+        <div class="add_fields_label_and_input">
+            <label class="input_label">Color</label>
+            <input id="new_matcher_text_color" style='width: 50%' value="#000000"></input>
+        </div>
+        <div class="add_fields_label_and_input">
+            <label class="input_label">Background Color</label>
+            <input id="new_matcher_background_color" style='width: 50%' value="#FFFFFF"></input>
+        </div>
+        <div class="button_container">
+            <button id="save_new_addition" class="add_button">Save</button>
+            <button id="cancel_addition" class="cancel_button">Cancel</button>
+        </div>
+        <hr style="border-top: 1px; color: #CBD5E0;" />
+    </div>
+    <div class="input_label" style="text-align: center; width: 100%; margin: auto;">Current Matches</div>
+    <div id="matchers_list" style="margin: auto; width: 70%">
+        <div style="text-align: left">
+            <label class="input_label">Match: Text</label>
+        </div>
+        <div class='flex-container'>
+            <button class='remove_button' id='removeEntry_'>Delete</button>
+            <div style="width: 50%; display: flex; justify-content: start">
+                <div style="display: flex; align-items: baseline; padding-right: 10px;">
+                    <label class="match_label">Color: #000000</label>
+                    <div class="box" style="background-color: #000000"></div>
+                </div>
+                <div style="display: flex; align-items: baseline;">
+                    <label class="match_label">Back: #FFFFFF</label>
+                    <div class="box" style="background-color: #FFFFFF"></div>
+                </div>
+            </div>
+        </div>
+        <hr style="border-top: 1px; color: #CBD5E0;" />
+    </div>
+    <script src="choose_page.js"></script>
+</body>
+
+</html>
