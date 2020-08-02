@@ -41,41 +41,12 @@ async function init() {
   }
 
   for (var i = 0; i < matchers.length; i++) {
-    // let newDivText =
-    //   "<div class='flex-container'><button class='remove_button' id='removeEntry_" +
-    //   i +
-    //   "'>remove</button>" + matchers[i].text + " = " +
-    //   matchers[i].text_color +
-    //   ":" + matchers[i].background_color + "</div>";
-
-    let newDivText = `
-    <div style='text-align: left'>
-            <label class='input_label'>Match: ${matchers[i].text} </label>
-        </div>
-        <div class='flex-container'>
-            <button class='remove_button' id='removeEntry_${i}'>Delete</button>
-            <div style='width: 50%; display: flex; justify-content: start'>
-                <div style='display: flex; align-items: baseline; padding-right: 10px;'>
-                    <label class='match_label'>Color: ${
-      matchers[i].text_color
-    } </label>
-                    <div class='box' style='background-color: ${
-      matchers[i].text_color
-    }'></div>
-                </div>
-                <div style='display: flex; align-items: baseline;'>
-                    <label class='match_label'>Back: ${
-      matchers[i].background_color
-    }</label>
-                    <div class='box' style='background-color: ${
-      matchers[i].background_color
-    }'></div>
-                </div>
-            </div>
-        </div>
-        <hr style='border-top: 1px; color: #CBD5E0;' />`;
-
-    matchers_list.innerHTML = matchers_list.innerHTML + newDivText;
+    addMatch(
+      i,
+      matchers[i].text,
+      matchers[i].text_color,
+      matchers[i].background_color,
+    );
   }
   var removeIds = document.querySelectorAll('[id^="removeEntry_"]');
   for (let removeButton of removeIds) {
@@ -86,6 +57,77 @@ async function init() {
       init();
     });
   }
+}
+
+function addMatch(id, text, text_color, background_color) {
+  var matchers_list = document.getElementById("matchers_list");
+  var parentDiv = document.createElement("div");
+  var labelDiv = document.createElement("div");
+  labelDiv.style.textAlign = "left";
+  var labelInDiv = document.createElement("label");
+  labelInDiv.classList.add("input_label");
+  labelInDiv.textContent = text;
+  labelDiv.appendChild(labelInDiv);
+
+  var flexDiv = document.createElement("div");
+  flexDiv.classList.add("flex-container");
+  var deleteButton = document.createElement("button");
+
+  deleteButton.classList.add("remove_button");
+  deleteButton.id = "removeentry" + id;
+  flexDiv.appendChild(deleteButton);
+
+  var colorsDiv = document.createElement("div");
+  colorsDiv.style.width = "50%";
+  colorsDiv.style.display = "flex";
+  colorsDiv.style.justifyContent = "start";
+
+  var textColorDiv = document.createElement("div");
+  textColorDiv.style.display = "flex";
+  textColorDiv.style.alignItems = "baseline";
+  textColorDiv.style.paddingRight = "10px";
+
+  var textLabel = document.createElement("label");
+  textLabel.classList.add("match_label");
+  textLabel.textContent = "Color: " + text_color;
+
+  var textColorDisplayBox = document.createElement("div");
+  textColorDisplayBox.classList.add("box");
+  textColorDisplayBox.style.backGroundColor = text_color;
+
+  textColorDiv.appendChild(textLabel);
+  textColorDiv.appendChild(textColorDisplayBox);
+
+  var bgColorDiv = document.createElement("div");
+  bgColorDiv.style.display = "flex";
+  bgColorDiv.style.alignItems = "baseline";
+  bgColorDiv.style.paddingRight = "10px";
+
+  var bgLabel = document.createElement("label");
+  bgLabel.classList.add("match_label");
+  bgLabel.textContent = "Color: " + background_color;
+
+  var bgColorDisplayBox = document.createElement("div");
+  bgColorDisplayBox.classList.add("box");
+  bgColorDisplayBox.style.backGroundColor = background_color;
+
+  bgColorDiv.appendChild(bgLabel);
+  bgColorDiv.appendChild(bgColorDisplayBox);
+
+  colorsDiv.appendChild(textColorDiv);
+  colorsDiv.appendChild(bgColorDiv);
+
+  flexDiv.appendChild(colorsDiv);
+
+  var horizontalBar = document.createElement("hr");
+  horizontalBar.style.borderTop = "1px";
+  horizontalBar.style.color = "#CBD5E0";
+
+  parentDiv.appendChild(labelDiv);
+  parentDiv.appendChild(flexDiv);
+  parentDiv.appendChild(horizontalBar);
+
+  matchers_list.appendChild(parentDiv);
 }
 
 let matchers = [];
