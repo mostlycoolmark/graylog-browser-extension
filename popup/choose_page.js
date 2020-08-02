@@ -71,6 +71,7 @@ function addMatch(id, text, text_color, background_color) {
 
   var flexDiv = document.createElement("div");
   flexDiv.classList.add("flex-container");
+  flexDiv.textContent = "Delete";
   var deleteButton = document.createElement("button");
 
   deleteButton.classList.add("remove_button");
