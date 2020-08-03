@@ -71,11 +71,11 @@ function addMatch(id, text, text_color, background_color) {
 
   var flexDiv = document.createElement("div");
   flexDiv.classList.add("flex-container");
-  flexDiv.textContent = "Delete";
   var deleteButton = document.createElement("button");
 
   deleteButton.classList.add("remove_button");
-  deleteButton.id = "removeentry" + id;
+  deleteButton.id = "removeEntry_" + id;
+  deleteButton.textContent = "Delete";
   flexDiv.appendChild(deleteButton);
 
   var colorsDiv = document.createElement("div");
